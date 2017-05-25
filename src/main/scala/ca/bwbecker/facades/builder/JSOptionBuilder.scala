@@ -1,10 +1,8 @@
-package org.querki.jsext
-
-import scala.scalajs.js
-
-import js.JSConverters._
+package ca.bwbecker.facades.builder
 
 import scala.language.implicitConversions
+import scala.scalajs.js
+import scala.scalajs.js.JSConverters._
 
 /**
   * Trait enabling hierarchical option structures where options can
@@ -24,10 +22,25 @@ trait JSOptionSetter[T <: js.Object, B <: JSOptionBuilder[T, _]] {
  *
  * @tparam T A placeholder facade trait -- usually just a declaration of a trait that inherits from js.Object.
  * @tparam B This class. (It is probably possible to eliminate this declaration, but I haven't figured it out yet.)
- * @param copy The chaining constructor. You don't usually need to worry about this explicitly, just follow the
- *   documented patterns.
  */
-abstract class JSOptionBuilder[T <: js.Object, B <: JSOptionBuilder[T, _]](copy:OptMap => B) extends JSOptionSetter[T, B] {
+abstract class JSOptionBuilder[T <: js.Object, B <: JSOptionBuilder[T, _]] extends JSOptionSetter[T, B] {
+
+
+  /**
+    * In a class X that extends JSOptionBuilder, implement the boilerplate
+    *
+    * {{{
+    * def copy(newDictionary: OptMap): X = {
+    *    new X(newDictionary)
+    * }
+    * }}}
+    *
+    * The original version of JSOptionBuilder passed this as a class parameter.  However,
+    * IntelliJ refused to do autocompletion with that version and seemed to consume lots of CPU.
+    * Doing it this way works.
+    */
+  def copy(newDictionary: OptMap): B
+
   /**
    * This is a dictionary of option values. It is usually *very* heterogeneous,
    * mixing everything from Ints to Functions. So it needs to be js.Any.
@@ -47,7 +60,7 @@ abstract class JSOptionBuilder[T <: js.Object, B <: JSOptionBuilder[T, _]](copy:
   /**
    * Extract the built-up options, in a form suitable for passing into a typical facade.
    */
-  def _result = {
+  private def _result = {
     dict.toJSDictionary.asInstanceOf[T]
   }
 

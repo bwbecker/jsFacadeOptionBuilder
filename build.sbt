@@ -1,26 +1,26 @@
 lazy val root = project.in(file(".")).
   enablePlugins(ScalaJSPlugin)
 
-name := "jsext Library for Scala.js"
+name := "jsFacadeOptionBuilder Library for Scala.js"
 
-normalizedName := "querki-jsext"
+normalizedName := "jsFacadeOptionBuilder"
 
-version := "0.8"
+version := "0.9-SNAPSHOT"
 
-organization := "org.querki"
+organization := "ca.bwbecker"
 
-scalaVersion := "2.12.0"
+scalaVersion := "2.12.2"
 
-crossScalaVersions := Seq("2.10.5", "2.11.8", "2.12.0")
+crossScalaVersions := Seq("2.11.8", "2.12.2")
 
-homepage := Some(url("http://www.querki.net/"))
+homepage := Some(url("https://github.com/bwbecker/jsFacadeOptionBuilder"))
 
 licenses += ("MIT License", url("http://www.opensource.org/licenses/mit-license.php"))
 
 scmInfo := Some(ScmInfo(
-    url("https://github.com/jducoeur/jsext"),
-    "scm:git:git@github.com/jducoeur/jsext.git",
-    Some("scm:git:git@github.com/jducoeur/jsext.git")))
+    url("https://github.com/bwbecker/jsFacadeOptionBuilder"),
+    "scm:git:git@github.com:bwbecker/jsFacadeOptionBuilder.git",
+    Some("scm:git:git@github.com:bwbecker/jsFacadeOptionBuilder.git")))
 
 publishMavenStyle := true
 
@@ -48,6 +48,10 @@ pomExtra := (
     <contributor>
       <name>Stefan Larsson</name>
       <url>https://github.com/lastsys/</url>
+    </contributor>
+    <contributor>
+      <name>Byron Weber Becker</name>
+      <url>https://github.com/bwbecker/</url>
     </contributor>
   </contributors>
 )
