@@ -15,7 +15,7 @@ facades.
 
 To use jsext, add this line to your Scala.js project's libraryDependencies:
 ```scala
-"ca.bwbecker" %%% "jsFacadeOptionBuilder" % "0.8"
+"ca.bwbecker" %%% "jsFacadeOptionBuilder" % "0.9.0"
 ```
 
 
