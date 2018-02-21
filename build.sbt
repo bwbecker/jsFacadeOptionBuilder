@@ -5,13 +5,13 @@ name := "jsFacadeOptionBuilder Library for Scala.js"
 
 normalizedName := "jsFacadeOptionBuilder"
 
-version := "0.9.0"
+version := "0.9.2"
 
 organization := "ca.bwbecker"
 
-scalaVersion := "2.12.2"
+scalaVersion := "2.12.4"
 
-crossScalaVersions := Seq("2.11.11", "2.12.2")
+crossScalaVersions := Seq("2.11.11", "2.12.4")
 
 homepage := Some(url("https://github.com/bwbecker/jsFacadeOptionBuilder"))
 
