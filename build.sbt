@@ -1,4 +1,4 @@
-crossScalaVersions in ThisBuild := Seq("2.12.10")
+crossScalaVersions in ThisBuild := Seq("2.12.11")
 scalaVersion in ThisBuild := (crossScalaVersions in ThisBuild).value.head
 
 
