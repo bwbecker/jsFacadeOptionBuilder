@@ -1,4 +1,4 @@
-crossScalaVersions in ThisBuild := Seq("2.12.11")
+crossScalaVersions in ThisBuild := Seq("2.12.13")
 scalaVersion in ThisBuild := (crossScalaVersions in ThisBuild).value.head
 
 
@@ -10,7 +10,7 @@ name := "jsFacadeOptionBuilder Library for Scala.js"
 
 normalizedName := "jsFacadeOptionBuilder"
 
-version := "0.9.4"
+version := "0.9.5"
 
 organization := "ca.bwbecker"
 
