@@ -178,3 +178,4 @@ pip-log.txt
 ## IntelliJ IDE
 #############
 .idea
+sbt.json
